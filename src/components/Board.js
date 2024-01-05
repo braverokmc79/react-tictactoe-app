@@ -4,15 +4,16 @@ import "./Board.css"
 
 
 const Board = () => {
- const [status, setStatus]=useState();
+const [status, setStatus]=useState(0);
 
- function renderSquare(i){
-    return   <Square  value={i} />;
+ function  renderSquare(i){
+    return   <Square  value={i}  />;
  }
 
   return (
     <div>
-        <div className='status'>{status}</div>
+        <div>{status}</div>
+
         <div className='board-row'>
             {renderSquare(0)}
             {renderSquare(1)}
