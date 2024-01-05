@@ -3,7 +3,7 @@ import "./Square.css"
 
 const Square = ({value}) => {
   return (
-    <button className='square'>
+    <button className='square' onClick={e=>console.log(value)}>
         {value}    
     </button>
   )
