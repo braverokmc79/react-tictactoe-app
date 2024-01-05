@@ -6,6 +6,10 @@ import "./Board.css"
 const Board = () => {
  const [status, setStatus]=useState();
 
+ function renderSquare(i){
+    return   <Square  value={i} />;
+ }
+
   return (
     <div>
         <div className='status'>{status}</div>
@@ -28,9 +32,6 @@ const Board = () => {
   )
 }
 
-export function renderSquare(i){
-    return   <Square  key={i} />;
-}
 
 
 export default Board
