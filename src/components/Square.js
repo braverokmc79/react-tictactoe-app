@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./Square.css"
 
-const Square = ({value}) => {
-  const [squareValue, setSquareValue]=useState(null);
 
-  useEffect(()=>{
-    setSquareValue(value);
-  },[value]);
+const Square = ({onClick, value}) => {
   
-  // function updateState(){
-  //   setSquareValue({v:value, v2:'x'});
-  //   console.log("statusV :",squareValue);
-  // }
-
   return (
-    <button className='square' onClick={()=>setSquareValue('x')}>
-        {squareValue}    
+    <button className='square' onClick={onClick}>
+        {value}    
     </button>
   )
+
 }
+
 
 export default Square
