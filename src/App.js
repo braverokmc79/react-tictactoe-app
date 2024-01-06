@@ -65,7 +65,7 @@ function App() {
     const desc =move ? 'Go to move #' + move : 'Go to game start';
     
     return (
-      <li key={move} ><button onClick={()=>jumpTo(move)}>{desc}</button></li>
+      <li key={move} ><button  className="move-button"   onClick={()=>jumpTo(move)}>{desc}</button></li>
     )
   }); 
 
@@ -84,15 +84,15 @@ function App() {
 
   return (
     <div className="game">
-        <div className="game-board">              
-           <Board  squares={current.squares}  onClick={(i)=>handleClick(i)}     />
-         
-        </div>
+                    
+        <Board  squares={current.squares}  onClick={(i)=>handleClick(i)}     />
+      
+
         <div className="game-info">
           {/* game-info */}
           <div>{status}</div>
 
-          <ol>{moves}</ol>        
+          <ol style={{listStyle:"none"}}>{moves}</ol>        
         </div>
     </div>
   );
