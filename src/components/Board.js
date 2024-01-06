@@ -5,12 +5,15 @@ import "./Board.css"
 
 export default function Board(){
     const [squares, setSquares]=useState(Array(9).fill(null));
+    const [xIsNext, setXIsNext] = useState(true);
+    const status=`Next Player : ${xIsNext ? 'X' : 'O'}`;
 
     const handleClick=(no)=>{ 
         //slice 깊은 복사
         const newSquares=squares.slice();
-        newSquares[no]='X';
+        newSquares[no]=xIsNext ? 'X' :'O';
         setSquares(newSquares);
+        setXIsNext(prev=>!prev);
     };
 
 
@@ -21,7 +24,7 @@ export default function Board(){
 
  return (
     <div>
-        <div>{renderSquares}</div>
+        <div className='status'>{status}</div>
 
         <div className='board-row'>
             {renderSquares(0)}

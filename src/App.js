@@ -4,8 +4,7 @@ import Board from "./components/Board";
 function App() {
   return (
     <div className="game">
-        <div className="game-board">   
-          Next Playre :X,O     
+        <div className="game-board">              
           <Board />
         
         </div>
